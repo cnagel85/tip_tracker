@@ -26,5 +26,10 @@ describe "Static pages" do
       visit '/static_pages/help'
       expect(page).to have_title("Tip Tracker | Help")
     end
+
+    it "should have a link to my email" do
+      visit '/static_pages/help'
+      expect(page).to have_link( 'coreyelliotnagel@gmail.com', href: 'mailto:coreyelliotnagel@gmail.com')
+    end
   end
 end
